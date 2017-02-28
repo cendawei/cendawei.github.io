@@ -5,6 +5,5 @@
     text-align: center;
 }
 .blog-name {
-    position: absolute;
-    top: -10px;
+    position: relative;
 }
