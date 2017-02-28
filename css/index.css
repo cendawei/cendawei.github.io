@@ -3,6 +3,7 @@
 }
 .blog-title {
     text-align: center;
+    background: url("../images/title.png") no-repeat;
 }
 .blog-name {
     position: relative;
