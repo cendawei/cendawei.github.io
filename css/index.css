@@ -8,3 +8,6 @@
 .blog-name {
     position: relative;
 }
+.blog-article-list {
+    border: 1px solid #ccc;;
+}
