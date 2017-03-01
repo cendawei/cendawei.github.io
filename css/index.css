@@ -22,5 +22,12 @@
     padding: 10px;
 }
 .blog-bar {
+    height: 40px;
+    padding: 10px;
+    color: #fff;
+    background-color: #605f5f;
+}
+.article-list-bar {
     height: 30px;
+    background-color: #fff;
 }
