@@ -4,9 +4,14 @@
 .blog-title {
     text-align: center;
     background: url("../images/title.png") no-repeat;
+    height: 301px;
+    background-position: center;
 }
 .blog-name {
     position: relative;
+    left: -424px;
+    top: 90px;
+    color: #fff;
 }
 .blog-article-list {
     border: 1px solid #ccc;;
