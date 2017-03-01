@@ -14,5 +14,10 @@
     color: #fff;
 }
 .blog-article-list {
-    border: 1px solid #ccc;;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.blog-article-content {
+    border: 1px solid #ccc;
+    padding: 10px;
 }
