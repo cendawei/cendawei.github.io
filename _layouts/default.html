@@ -2,13 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../plugins/bootstrap-3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/index.css">
     <title>{{ page.title }}</title>
 </head>
-<body class="container">
+<body class="blog-container">
 <div class="blog-title">
     <h2 class="blog-name">David's Blog</h2>
 </div>
-{{ content }}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 blog-article-list">
+            <p>最新文章</p>
+            <ul>
+                {% for post in site.posts %}
+                <li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-8">
+            {{ content }}
+        </div>
+    </div>
+</div>
+<script src="../plugins/jquery/jquery.js"></script>
+<script src="../plugins/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
