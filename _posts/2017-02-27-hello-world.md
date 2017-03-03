@@ -1,7 +1,7 @@
 ---
 layout: default
-title: 你好，世界
+title: 页面渲染优化
 ---
 #{{ page.title }}
 ###我的第一篇文章
-###{{ page.date | date_to_string }}
+浏览器（除chrome）以外，都只有一个进程，而进程中渲染线程是主线程，其中还有包括网络线程（一般2-6个）
