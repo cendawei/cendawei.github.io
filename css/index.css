@@ -29,6 +29,7 @@
 .blog-article-content {
     border: 1px solid #ccc;
     padding: 10px;
+    background: #ffffff;
 }
 .blog-bar {
     height: 40px;
@@ -42,8 +43,4 @@
     padding: 5px;
     font-size: 14px;
     font-weight: bold;
-}
-.blog-article-content-container {
-    background: #ffffff;
-    padding-right: 0px;
 }
