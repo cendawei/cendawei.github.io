@@ -10,3 +10,4 @@ title: 页面渲染优化
 <p>首先将页面框架写在ejs页面（例如table的thead），后端监听路由，直接渲染这个页面。</p>
 <p>然后，前端js请求数据时候，可以用axios.all()、Promise.all()和$.when()等并发请求的方式，充分调用浏览器的网络多线程，异步渲染页面数据。</p>
 <p>最后，用vue的一个好处当然是数据驱动，只需要构造data，而不用直接操作DOM更新。</p>
+<p><img src="/images/brower-blog/brower-process.png" alt="浏览器各层示意图"></p>
