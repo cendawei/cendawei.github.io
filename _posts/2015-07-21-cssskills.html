@@ -1,0 +1,97 @@
+---
+layout: default
+title: css一些有用而容易忽略的属性
+---
+<h1>{{ page.title }}</h1>
+<div class="article-tag">原创文章 转载注明出处</div>
+<div>
+    <h3>强制不换行，超出部分用省略号显示</h3>
+    <code>
+        <pre>
+    {
+            overflow:hidden;
+            white-space:nowrap;
+            text-overflow:ellipsis;
+    }
+        </pre>
+    </code>
+
+    <h3>文本强制超出就换行，破坏长串字母和数字等的不法输入</h3>
+    <code>
+        <pre>
+    {
+            word-wrap: break-word;
+    }
+        </pre>
+    </code>
+
+    <h3>设置图片最大宽度和最大高度不超过500px，图片不失真</h3>
+    <code>
+        <pre>
+    &lt;img src='test.jpg' style="max-width: 500px; max-height: 500px;"&gt;
+        </pre>
+    </code>
+
+    <h3>文本不可选中，兼容写法</h3>
+    <code>
+        <pre>
+    body,canvas,div{
+        -moz-user-select:none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        -khtml-user-select:none;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+        </pre>
+    </code>
+
+    <h3>定位用法：</h3>
+    <ol>
+        <li>position: relative; 不会浮动元素</li>
+        <li>position是相对于递归上级父元素设置了absolute和relative定位的，如果一直没有，就会相对文档定位。</li>
+    </ol>
+    <h3>width无效用法 </h3>
+    <p>width对display:inline使用无效，也因此，span天生不能用width约束。</p>
+
+    <h3>两种盒子模型</h3>
+    <h4>标准W3C盒子模型</h4>
+    <img src="/images/css-blog/standara-box.png" alt="标准盒子模型">
+    <h4>IE盒子模型</h4>
+    <img src="/images/css-blog/ie-box.png" alt="IE盒子模型">
+
+    <h3>box-flex</h3>
+    <p>一个例子:</p>
+    <p style="font-weight: bold;">CSS</p>
+    <code>
+        <pre>
+    .test_box {
+        display: -moz-box;
+        display: -webkit-box;
+        display: box;
+        ...
+    }
+    .list { ... }
+    .list_one {
+        -moz-box-flex: 1;
+        -webkit-box-flex: 1;
+        box-flex: 1;
+    }
+    .list_two{
+        -moz-box-flex: 2;
+        -webkit-box-flex: 2;
+        box-flex: 2;
+    }
+        </pre>
+    </code>
+    <p style="font-weight: bold;">HTML</p>
+    <code>
+        <pre>
+    &lt;div class="test_box"&gt;
+        &lt;div class="list list_two"&gt;1&lt;/div&gt;
+        &lt;div class="list list_one"&gt;2&lt;/div&gt;
+        &lt;div class="list list_one"&gt;3&lt;/div&gt;
+    &lt;/div&gt;
+        </pre>
+    </code>
+    <img src="/images/css-blog/box-flex.png" alt="box-flex切分图">
+</div>
