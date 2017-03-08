@@ -1,0 +1,52 @@
+---
+layout: default
+title: tmodjs一些配置细节
+---
+<h1>{{ page.title }}</h1>
+<div class="article-tag">原创文章 转载注明出处</div>
+
+<div>
+    <ol>
+        <li>用grunt-tmod实现模板打包，支持require调用。（因为grunt-tmod打包时，有一项参数type)</li>
+        <li>seajs的模板后缀名用html，是与配置有关。（src）</li>
+    </ol>
+    <code>
+        <pre>
+    module.exports = function(grunt) {
+    grunt.initConfig({
+        tmod: {
+            build: {
+                src: './view/*.html',
+                dest: './view-build',
+                options: {
+                    base: "./view",
+                    cache: true,
+                    minify: true,
+                    syntax: 'simple',
+                    charset: "utf-8",
+                    type: "cmd",
+                    compress: true,
+                    helper: "./view/template-helper.js"
+                }
+            }
+        },
+        watch: {
+            template: {
+                files: '<%=tmod.build.src%>',
+                tasks: ['tmod:build'],
+                options: {
+                    spawn: false
+                }
+            }
+        }
+    });
+
+
+    grunt.loadNpmTasks('grunt-tmod');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+
+    grunt.registerTask('default', ['tmod:build', 'watch:template']);
+};
+        </pre>
+    </code>
+</div>
