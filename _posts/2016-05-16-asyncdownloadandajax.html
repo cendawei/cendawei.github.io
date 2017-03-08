@@ -1,0 +1,28 @@
+---
+layout: default
+title: ajax请求与异步下载
+---
+<h1>{{ page.title }}</h1>
+<div class="article-tag">原创文章 转载注明出处</div>
+<div>
+    <ol>
+        <li>最好带上返回数据类型：dataType。</li>
+        <li>当带上dataType='json'，请求时，返回结果如果不是json的话，即时返回状态是200（成功），也会调到执行error函数。</li>
+        <li>
+            <p>
+                JQuery的ajax函数的返回类型只有xml、text、json、html等类型，没有“流”类型，所以我们要实现ajax下载，不能够使用相应的ajax函数进行文件下载。但可以用js生成一个form，用这个form提交参数，并返回“流”类型的数据。在实现过程中，页面也没有进行刷新。
+            </p>
+            <p>eg.</p>
+            <p>
+                &lt;form action="/load/excel" method="get"&gt;<br>
+                &lt;input type="hidden" name="type" id="excel_type" value=""&gt;<br>
+                &lt;input type="submit" id="excel_submit"&gt;<br>
+                &lt;/form&gt;
+            </p>
+            <p>调用时：</p>
+            <p>$('#excel_type').val('machines');</p>
+            <p>$('#excel_submit').click();</p>
+        </li>
+        <li>ajax请求的时候，最好在data参数提交一个时间戳，这样可以防止接口缓存。（接口缓存在IE浏览器上会有意想不到的麻烦事情。）</li>
+    </ol>
+</div>
