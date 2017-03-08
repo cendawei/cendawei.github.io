@@ -14,14 +14,22 @@ title: ajax请求与异步下载
             </p>
             <p>eg.</p>
             <p>
-                &lt;form action="/load/excel" method="get"&gt;<br>
-                &nbsp;&nbsp;&lt;input type="hidden" name="type" id="excel_type" value=""&gt;<br>
-                &nbsp;&nbsp;&lt;input type="submit" id="excel_submit"&gt;<br>
-                &lt;/form&gt;
+                <code>
+                    <pre>
+                        <form action="/load/excel" method="get">
+                             <input type="hidden" name="type" id="excel_type" value="">          //name属性用于提交时作为参数的名称
+                             <input type="submit" id="excel_submit">
+                        </form>
+                    </pre>
+                </code>
             </p>
             <p>调用时：</p>
-            <p>$('#excel_type').val('machines');</p>
-            <p>$('#excel_submit').click();</p>
+            <code>
+                <pre>
+                    $('#excel_type').val('machines');
+                    $('#excel_submit').click();
+                </pre>
+            </code>
         </li>
         <li>ajax请求的时候，最好在data参数提交一个时间戳，这样可以防止接口缓存。（接口缓存在IE浏览器上会有意想不到的麻烦事情。）</li>
     </ol>

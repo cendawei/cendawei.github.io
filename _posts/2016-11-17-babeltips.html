@@ -29,6 +29,20 @@ title: Babel使用小tips
     <div class="babel-artile-item">
         <p>3、babel默认不转码的一些es6的API，eg. Promise</p>
         <p>方案：安装babel-plugin-transform-runtime</p>
-        <p><img src="/images/babel-tips/babel-plugin-transform-runtime.png" alt="安装babel-plugin-transform-runtime"></p>
+        <h3>Installation</h3>
+        <code>
+            <pre>
+                $ npm install babel-plugin-transform-runtime
+            </pre>
+        </code>
+        <h3>Usage</h3>
+        <h4>.babelrc</h4>
+        <code>
+            <pre>
+                {
+                  "plugins": ["transform-runtime"]
+                }
+            </pre>
+        </code>
     </div>
 </div>
